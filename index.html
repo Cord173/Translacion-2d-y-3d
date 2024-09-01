@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Efectos y Animaciones CSS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .box {
+            width: 300px;
+            height: 200px;
+            background-color: #4CAF50;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .box:hover {
+            transform: rotate(10deg) scale(1.05);
+            background-color: #45a049;
+        }
+
+        .box3d {
+            perspective: 1000px;
+        }
+
+        .box3d .inner-box {
+            width: 300px;
+            height: 200px;
+            background-color: #2196F3;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+
+        .box3d:hover .inner-box {
+            transform: rotateY(180deg);
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .multi-column {
+            column-count: 2;
+            column-gap: 20px;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        .ui-element {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .flex-item {
+            flex: 1;
+            background-color: #FF5722;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ejemplo de Efectos y Animaciones CSS</h1>
+    </header>
+    <div class="content">
+        <div class="box">
+            Transformación 2D
+        </div>
+        <div class="box box3d">
+            <div class="inner-box">
+                Transformación 3D
+            </div>
+        </div>
+        <div class="fade-in">
+            <p>Texto que aparece con un efecto de desvanecimiento.</p>
+        </div>
+        <div class="multi-column">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque urna non dolor vehicula, nec efficitur nisi aliquam. Sed pharetra dui a ligula vestibulum, nec blandit erat condimentum. Vivamus euismod augue nec ligula auctor, nec scelerisque orci vulputate.
+            </p>
+            <p>
+                Integer a turpis ut purus malesuada pharetra. Maecenas sit amet elit euismod, condimentum ligula ac, convallis eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse potenti.
+            </p>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">
+                Flex Item 1
+            </div>
+            <div class="flex-item">
+                Flex Item 2
+            </div>
+            <div class="flex-item">
+                Flex Item 3
+            </div>
+        </div>
+        <div class="ui-element">
+            Elemento de UI con borde y padding
+        </div>
+    </div>
+</body>
+</html>
